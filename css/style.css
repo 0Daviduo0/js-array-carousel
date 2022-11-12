@@ -44,8 +44,9 @@ body{
             width: 1000px;
             height: 400px;
             position: absolute;
+            display: none;
         }
 
-            .inactive{
-                display: none;
+            .active{
+                display: block;
             }
