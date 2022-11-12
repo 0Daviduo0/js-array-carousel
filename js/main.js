@@ -30,13 +30,49 @@ for(let i = 0; i < imgArray.length; i++){
 
     // setting childs
     parent.appendChild(child);
-    child.appendChild(imgContainer)
+    child.appendChild(imgContainer);
     
 }
 
-// for(let i = 0; i < imgArray.length; i++){
+var activeImg = 0;
+const carouselItem = document.getElementsByClassName('carousel_item');
+carouselItem[activeImg].classList.add('active');
 
-//     child.appendChild("img")
+const next = document.getElementById('next_button');
+    next.addEventListener('click', function() {
 
-    
-// }
+        if (activeImg < imgArray.length -1){
+
+            activeImg++;
+
+            carouselItem[activeImg].classList.add('active');
+
+            // Contatore immagine
+            console.log("n immagine", activeImg);
+            console.log("n array", imgArray.length);
+        }
+        
+        // if (activeImg === imgArray.length -1){
+        //     next.classList.add('display_none');
+        // }
+        // else if (activeImg < 4){
+        //     next.classList.remove('display_none');
+        // }
+        
+    })
+
+const back = document.getElementById('back_button');
+    back.addEventListener('click', function() {
+
+        if (activeImg <= imgArray.length - 1){
+
+            carouselItem[activeImg].classList.remove('active');
+
+            activeImg--;
+
+            // Contatore immagine
+            console.log("n immagine", activeImg);
+            console.log("n array", imgArray.length);
+
+        }
+    })

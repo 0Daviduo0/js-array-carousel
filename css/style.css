@@ -50,3 +50,7 @@ body{
             .active{
                 display: block;
             }
+
+            .display_none{
+                display: none;
+            }
