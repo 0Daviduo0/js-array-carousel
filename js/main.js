@@ -1,5 +1,5 @@
 // Array with images
-var imgArray = new Array();
+let imgArray = new Array();
 
     imgArray[0] = new Image();
     imgArray[0].src = 'img/01.webp';
@@ -18,3 +18,26 @@ var imgArray = new Array();
 
 console.log(imgArray)
 console.log(imgArray.length)
+
+// post array items
+for(let i = 0; i < imgArray.length; i++){
+
+    console.log(imgArray[i]);
+
+    var parent = document.getElementById('image_carousel');
+    var child = document.createElement("div");
+    child.className = "carousel_item";
+    parent.appendChild(child);
+
+
+    // var createIMG = document.createElement(imgArray[i]);
+    // child.appendChild(createIMG)
+    
+}
+
+// for(let i = 0; i < imgArray.length; i++){
+
+//     child.appendChild("img")
+
+    
+// }
