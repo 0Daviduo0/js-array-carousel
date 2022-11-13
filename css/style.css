@@ -81,5 +81,6 @@ body{
                 .thumb_active{
                     filter: none;
                     border: white 1px solid;
+                    box-shadow:0px 0px 40px 1px #ffffff6e ;
                 }
 
