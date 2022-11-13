@@ -64,14 +64,24 @@ const next = document.getElementById('next_button');
             console.log("n array", imgArray.length);
 
         }
-        
-        // if (activeImg === imgArray.length -1){
-        //     next.classList.add('display_none');
-        // }
-        // else if (activeImg < 4){
-        //     next.classList.remove('display_none');
-        // }
-        
+        else if (activeImg == 4){
+            thumbnails[activeImg].classList.remove('thumb_active');
+            carouselItem[activeImg].classList.remove('active');
+            activeImg = 3;
+            thumbnails[activeImg].classList.remove('thumb_active');
+            carouselItem[activeImg].classList.remove('active');
+            activeImg = 2;
+            thumbnails[activeImg].classList.remove('thumb_active');
+            carouselItem[activeImg].classList.remove('active');
+            activeImg = 1;
+            thumbnails[activeImg].classList.remove('thumb_active');
+            carouselItem[activeImg].classList.remove('active');
+            activeImg = 0;
+            carouselItem[activeImg].classList.add('active');
+            thumbnails[activeImg].classList.add('thumb_active');
+            console.log("n immagine", activeImg);
+        }
+
     })
 
 const back = document.getElementById('back_button');
@@ -91,11 +101,23 @@ const back = document.getElementById('back_button');
             console.log("n array", imgArray.length);
 
         }
+        else if (activeImg == 0){
+            thumbnails[activeImg].classList.remove('thumb_active');
+            carouselItem[activeImg].classList.remove('active');
+            carouselItem[activeImg].classList.add('active');
+            activeImg = 1;
+            carouselItem[activeImg].classList.remove('active');
+            carouselItem[activeImg].classList.add('active');
+            activeImg = 2;
+            carouselItem[activeImg].classList.remove('active');
+            carouselItem[activeImg].classList.add('active');
+            activeImg = 3;
+            carouselItem[activeImg].classList.remove('active');
+            carouselItem[activeImg].classList.add('active');
+            activeImg = 4;
+            carouselItem[activeImg].classList.add('active');
+            thumbnails[activeImg].classList.add('thumb_active');
+            console.log("n immagine", activeImg);
+        }
 
-        // if (activeImg > 0){
-
-        //     thumbnails[activeImg].classList.remove('thumb_active');
-
-        //     activeImg--;
-        // }
     })

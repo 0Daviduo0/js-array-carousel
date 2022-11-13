@@ -18,19 +18,32 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(85,85,85);
-    background: radial-gradient(circle, rgba(85,85,85,1) 0%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(309deg, #000000, #1f1f1f, #000000);
+    background-size: 600% 600%;
+
+    animation: fuzzbizz 6s ease infinite;
 }
+
+    @keyframes fuzzbizz {
+        0%{background-position:34% 0%}
+        50%{background-position:67% 100%}
+        100%{background-position:34% 0%}
+    }
 
     .button{
         width: auto;
         padding: 5px 10px;
         margin: 20px 0;
         font-size: 30px;
-        background-color: rgba(138, 138, 138, 0.268);
+        background-color: rgba(189, 189, 189, 0.46);
         text-align: center;
         border-radius: 50%;
     }
+
+        .button:hover{
+            outline: #007ee5 3px solid;
+            background-color: rgba(138, 138, 138, 0.48);
+        }
 
     .main_container{
         display: flex;
@@ -39,7 +52,7 @@ body{
         #image_carousel{
             width: 1000px;
             height: 600px;
-            border: rgba(133, 133, 133, 0.463) 1px solid;
+            border: rgba(181, 181, 181, 0.623) 1px solid;
             position: relative;
             border-radius: 15px;
             overflow: hidden;
