@@ -13,7 +13,6 @@ let imgArray = new Array();
 
 console.log(imgArray)
 console.log(imgArray.length)
-
 // post array items
 for(let i = 0; i < imgArray.length; i++){
     // List array items
@@ -24,13 +23,24 @@ for(let i = 0; i < imgArray.length; i++){
     var child = document.createElement("div");
     child.className = "carousel_item";
 
+    var parent2 = document.getElementById('thumbnails');
+    var child2 = document.createElement("div");
+    child2.className = "thumb";
+    
+
     // adding img div
     var imgContainer = document.createElement("img");
-    imgContainer.src = imgArray[i]
+    imgContainer.src = imgArray[i];
+
+    var thumbContainer = document.createElement("img");
+    thumbContainer.src = imgArray[i];
 
     // setting childs
     parent.appendChild(child);
     child.appendChild(imgContainer);
+
+    parent2.appendChild(child2);
+    child2.appendChild(thumbContainer)
     
 }
 
