@@ -44,19 +44,20 @@ for(let i = 0; i < imgArray.length; i++){
     
 }
 
+// variable for counting the active image
 let activeImg = 0;
 
-
+// getting thumb class and adding the active state
 const thumbnails = document.getElementsByClassName('thumb');
 thumbnails[activeImg].classList.add('thumb_active');
 
 console.log(thumbnails);
 
-
+// getting carousel item class and adding the active state
 const carouselItem = document.getElementsByClassName('carousel_item');
 carouselItem[activeImg].classList.add('active');
 
-
+// getting next button and adding function
 const next = document.getElementById('next_button');
     next.addEventListener('click', function() {
 
@@ -74,6 +75,7 @@ const next = document.getElementById('next_button');
             console.log("n array", imgArray.length);
 
         }
+         // Infinite scroll !(but only for 5 items)!
         else if (activeImg == 4){
             thumbnails[activeImg].classList.remove('thumb_active');
             carouselItem[activeImg].classList.remove('active');
@@ -94,6 +96,7 @@ const next = document.getElementById('next_button');
 
     })
 
+// getting back button and adding function
 const back = document.getElementById('back_button');
     back.addEventListener('click', function() {
 
@@ -111,6 +114,7 @@ const back = document.getElementById('back_button');
             console.log("n array", imgArray.length);
 
         }
+        // Infinite scroll !(but only for 5 items)!
         else if (activeImg == 0){
             thumbnails[activeImg].classList.remove('thumb_active');
             carouselItem[activeImg].classList.remove('active');
