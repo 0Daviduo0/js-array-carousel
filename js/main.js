@@ -1,15 +1,5 @@
 // Array with images
-let imgArray = new Array();
-
-    imgArray[0] = 'img/01.webp';
-
-    imgArray[1] = 'img/02.webp';
-
-    imgArray[2] = 'img/03.webp';
-
-    imgArray[3] = 'img/04.webp';
-
-    imgArray[4] = 'img/05.webp';
+let imgArray = ['01', '02', '03', '04', '05'];
 
 console.log(imgArray)
 console.log(imgArray.length)
@@ -30,10 +20,10 @@ for(let i = 0; i < imgArray.length; i++){
 
     // adding img div
     var imgContainer = document.createElement("img");
-    imgContainer.src = imgArray[i];
+    imgContainer.src = `img/${imgArray[i]}.webp`;
 
     var thumbContainer = document.createElement("img");
-    thumbContainer.src = imgArray[i];
+    thumbContainer.src = `img/${imgArray[i]}.webp`;
 
     // setting childs
     parent.appendChild(child);
