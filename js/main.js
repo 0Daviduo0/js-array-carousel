@@ -35,7 +35,7 @@ for(let i = 0; i < imgArray.length; i++){
 }
 
 // variable for counting the active image
-let activeImg = 0;
+var activeImg = 0;
 
 // getting thumb class and adding the active state
 const thumbnails = document.getElementsByClassName('thumb');
@@ -65,19 +65,18 @@ const next = document.getElementById('next_button');
             console.log("n array", imgArray.length);
 
         }
-         // Infinite scroll !(but only for 5 items)!
-        else if (activeImg == 4){
-            thumbnails[activeImg].classList.remove('thumb_active');
+         // Infinite scroll 
+        else if (activeImg == imgArray.length -1){
             carouselItem[activeImg].classList.remove('active');
-            activeImg = 3;
             thumbnails[activeImg].classList.remove('thumb_active');
-            carouselItem[activeImg].classList.remove('active');
-            activeImg = 2;
-            thumbnails[activeImg].classList.remove('thumb_active');
-            carouselItem[activeImg].classList.remove('active');
-            activeImg = 1;
-            thumbnails[activeImg].classList.remove('thumb_active');
-            carouselItem[activeImg].classList.remove('active');
+
+            for (activeImg == imgArray.length; activeImg--; ){
+
+                carouselItem[activeImg].classList.remove('active');
+                thumbnails[activeImg].classList.remove('thumb_active');
+                
+            }
+            
             activeImg = 0;
             carouselItem[activeImg].classList.add('active');
             thumbnails[activeImg].classList.add('thumb_active');
@@ -96,7 +95,7 @@ const back = document.getElementById('back_button');
             thumbnails[activeImg].classList.remove('thumb_active');
 
             activeImg--;
-
+            carouselItem[activeImg].classList.add('active');
             thumbnails[activeImg].classList.add('thumb_active');
 
             // Contatore immagine
@@ -104,21 +103,13 @@ const back = document.getElementById('back_button');
             console.log("n array", imgArray.length);
 
         }
-        // Infinite scroll !(but only for 5 items)!
+        // Infinite scroll 
         else if (activeImg == 0){
-            thumbnails[activeImg].classList.remove('thumb_active');
             carouselItem[activeImg].classList.remove('active');
-            carouselItem[activeImg].classList.add('active');
-            activeImg = 1;
-            carouselItem[activeImg].classList.remove('active');
-            carouselItem[activeImg].classList.add('active');
-            activeImg = 2;
-            carouselItem[activeImg].classList.remove('active');
-            carouselItem[activeImg].classList.add('active');
-            activeImg = 3;
-            carouselItem[activeImg].classList.remove('active');
-            carouselItem[activeImg].classList.add('active');
-            activeImg = 4;
+            thumbnails[activeImg].classList.remove('thumb_active')
+
+            activeImg = imgArray.length -1;
+
             carouselItem[activeImg].classList.add('active');
             thumbnails[activeImg].classList.add('thumb_active');
             console.log("n immagine", activeImg);
